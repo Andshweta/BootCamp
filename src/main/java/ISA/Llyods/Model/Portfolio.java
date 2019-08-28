@@ -8,21 +8,34 @@ public class Portfolio {
 	
 	
 	
-	// CustomerId to store fund details 
-	@Id
-	private String id;
+		// CustomerId to store fund details 
+		@Id
+		private String id;
 	
 	
 		//Low Risk Fund id 
-		private int lowRskFund;
-		
-		@Override
-		public String toString() {
-			return "Portfolio [id=" + id + ", lowRskFund=" + lowRskFund + ", lowRskFundAmnt=" + lowRskFundAmnt
-					+ ", midRskFund=" + midRskFund + ", midRskFundAmnt=" + midRskFundAmnt + ", highRskFund="
-					+ highRskFund + ", highRskFundAmnt=" + highRskFundAmnt + "]";
-		}
+		private int lowRskFundId;
+	
 
+		//Low Fund Amount detail
+		private double lowRskFundAmnt;
+		
+		private String sortCode;		
+	
+
+	
+		private int isaAccountNumber;
+		
+	
+
+		//Medium Risk fund id
+		private int midRskFundId;
+
+		
+		//Medium Fund Amount detail
+		private double midRskFundAmnt;
+
+		
 
 		public Portfolio() {
 			super();
@@ -30,31 +43,38 @@ public class Portfolio {
 		}
 
 
-		public Portfolio(String id, int lowRskFund, double lowRskFundAmnt, int midRskFund, double midRskFundAmnt,
-				int highRskFund, double highRskFundAmnt) {
+		public Portfolio(String id, int lowRskFundId, double lowRskFundAmnt, String sortCode, int isaAccountNumber,
+				int midRskFundId, double midRskFundAmnt, int highRskFundId, double highRskFundAmnt) {
 			super();
 			this.id = id;
-			this.lowRskFund = lowRskFund;
+			this.lowRskFundId = lowRskFundId;
 			this.lowRskFundAmnt = lowRskFundAmnt;
-			this.midRskFund = midRskFund;
+			this.sortCode = sortCode;
+			this.isaAccountNumber = isaAccountNumber;
+			this.midRskFundId = midRskFundId;
 			this.midRskFundAmnt = midRskFundAmnt;
-			this.highRskFund = highRskFund;
+			this.highRskFundId = highRskFundId;
 			this.highRskFundAmnt = highRskFundAmnt;
 		}
 
 
-		//Low Fund Amount detail
-		private double lowRskFundAmnt;
-		
-		
-		//Medium Risk fund id
-		private int midRskFund;
+		@Override
+		public String toString() {
+			return "Portfolio [id=" + id + ", lowRskFundId=" + lowRskFundId + ", lowRskFundAmnt=" + lowRskFundAmnt
+					+ ", sortCode=" + sortCode + ", isaAccountNumber=" + isaAccountNumber + ", midRskFundId="
+					+ midRskFundId + ", midRskFundAmnt=" + midRskFundAmnt + ", highRskFundId=" + highRskFundId
+					+ ", highRskFundAmnt=" + highRskFundAmnt + "]";
+		}
 
-		
-		//Medium Fund Amount detail
-		private double midRskFundAmnt;
 
-		
+		// High Risk Fund id
+		private int highRskFundId;
+
+		 
+		//High Fund Amount detail
+		private double highRskFundAmnt;
+
+
 		public String getId() {
 			return id;
 		}
@@ -65,13 +85,13 @@ public class Portfolio {
 		}
 
 
-		public int getLowRskFund() {
-			return lowRskFund;
+		public int getLowRskFundId() {
+			return lowRskFundId;
 		}
 
 
-		public void setLowRskFund(int lowRskFund) {
-			this.lowRskFund = lowRskFund;
+		public void setLowRskFundId(int lowRskFundId) {
+			this.lowRskFundId = lowRskFundId;
 		}
 
 
@@ -85,13 +105,33 @@ public class Portfolio {
 		}
 
 
-		public int getMidRskFund() {
-			return midRskFund;
+		public String getSortCode() {
+			return sortCode;
 		}
 
 
-		public void setMidRskFund(int midRskFund) {
-			this.midRskFund = midRskFund;
+		public void setSortCode(String sortCode) {
+			this.sortCode = sortCode;
+		}
+
+
+		public int getIsaAccountNumber() {
+			return isaAccountNumber;
+		}
+
+
+		public void setIsaAccountNumber(int isaAccountNumber) {
+			this.isaAccountNumber = isaAccountNumber;
+		}
+
+
+		public int getMidRskFundId() {
+			return midRskFundId;
+		}
+
+
+		public void setMidRskFundId(int midRskFundId) {
+			this.midRskFundId = midRskFundId;
 		}
 
 
@@ -105,13 +145,13 @@ public class Portfolio {
 		}
 
 
-		public int getHighRskFund() {
-			return highRskFund;
+		public int getHighRskFundId() {
+			return highRskFundId;
 		}
 
 
-		public void setHighRskFund(int highRskFund) {
-			this.highRskFund = highRskFund;
+		public void setHighRskFundId(int highRskFundId) {
+			this.highRskFundId = highRskFundId;
 		}
 
 
@@ -123,14 +163,6 @@ public class Portfolio {
 		public void setHighRskFundAmnt(double highRskFundAmnt) {
 			this.highRskFundAmnt = highRskFundAmnt;
 		}
-
-
-		// High Risk Fund id
-		private int highRskFund;
-
-		 
-		//High Fund Amount detail
-		private double highRskFundAmnt;
 		
 
 
