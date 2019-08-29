@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,12 +28,17 @@ public class IsaController {
 	private PortfolioRepository prtflRepo;
 	
 	
+	
+	   
+	
 	/**
 	 * Fetches customer's  details details based on username
 	 * @param username
 	 * @return customer details wrapped in business partner
 	 */
+	@CrossOrigin
 	@GetMapping("/getUserDtls/{username}")
+   
 	public Optional<BusinessPartner> getUserDetails(@PathVariable String username)
 	{
 		return bpRepo.findById(username);
@@ -46,6 +52,7 @@ public class IsaController {
 	 * @param customer details object 
 	 * @return text showing success
 	 */
+	@CrossOrigin
 	@PostMapping("/setUserDtls/")
 	public String saveUserDetails(@RequestBody List<BusinessPartner> bp)
 	{
@@ -71,9 +78,8 @@ public class IsaController {
 		* @return success message
 		
 		*/
-
+			@CrossOrigin
 			@PostMapping("/setCustomerFundDtls/")
-			
 			public Portfolio saveFundDetails(@RequestBody Portfolio portolio)
 			
 			{
@@ -98,8 +104,8 @@ public class IsaController {
 			
 			*/
 			
+			@CrossOrigin
 			@GetMapping("/fetchCustomerFundDtls/{username}")
-			
 			public Optional<Portfolio> FundDetailsView(@PathVariable String username)
 			
 			{
@@ -117,9 +123,8 @@ public class IsaController {
 				* @return Returns true if customer is eligible else returns false
 				
 				*/
-
+			@CrossOrigin
 			@GetMapping("/validateCustomer/{username}")
-
 			public String validateCustomer(@PathVariable String username)
 
 			{
